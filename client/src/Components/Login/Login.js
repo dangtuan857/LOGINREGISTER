@@ -52,10 +52,16 @@ const Login = () => {
     useEffect(() => {
         if (loginStatus !== "") {
             setStatusHolder("showMessage"); //show message
-            setTimeout(() => {
-                setStatusHolder("message"); // hide message after 4s
+            const timeoutId = setTimeout(() => {
+                setLoginStatus(""); // hide message after 4s
             }, 4000);
+
+            return () => {
+                clearTimeout(timeoutId);
+            }
         }
+        if (loginStatus === "")
+            setStatusHolder("message");
     }, [loginStatus]);
 
     //Let clear the form on submit
