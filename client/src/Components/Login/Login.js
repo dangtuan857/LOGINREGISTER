@@ -37,8 +37,8 @@ const Login = () => {
             // I want to catch the response first - We have date successfully from database and we can catch an error if the credentials are wrong.
             if (
                 response.data.message ||
-                loginUserName == "" ||
-                loginPassword == ""
+                loginUserName === "" ||
+                loginPassword === ""
             ) {
                 // If credential don't match
                 navigateTo("/"); // so we shall navigate to the same login page

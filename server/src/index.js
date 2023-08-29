@@ -71,7 +71,6 @@ app.post("/login", (req, res) => {
             res.send(results);
         }
         else {
-            console.log("User inserted successfully!");
             res.send({message: `Credentials Don't match!`});
             // This should be good, Let try to login
             // Successful
